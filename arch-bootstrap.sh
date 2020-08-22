@@ -104,6 +104,8 @@ configure_pacman() {
   fi
   SERVER=$(get_template_repo_url "$REPO_URL" "$ARCH")
   echo "Server = $SERVER" > "$DEST/etc/pacman.d/mirrorlist"
+  debug "正在清除pacman软件包缓存"
+  rm -rf $DEST/var/cache/pacman/pkg/*
 }
 
 configure_minimal_system() {
