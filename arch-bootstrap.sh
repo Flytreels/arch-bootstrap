@@ -100,7 +100,7 @@ configure_pacman() {
   if [ -f "/etc/resolv.conf" ];then
   cat "/etc/resolv.conf" >"$DEST/etc/resolv.conf"
   else
-  echo "nameserver 114.114.114.114">$DEST/etc/resolv.conf
+  echo "nameserver 223.5.5.5">$DEST/etc/resolv.conf
   fi
   SERVER=$(get_template_repo_url "$REPO_URL" "$ARCH")
   echo "Server = $SERVER" > "$DEST/etc/pacman.d/mirrorlist"
